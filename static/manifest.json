@@ -1,0 +1,13 @@
+{
+  "name": "Wellbeing",
+  "short_name": "Wellbeing",
+  "description": "An app that allows users to manage their wellbeing and improve their quality of life.",
+  "start_url": "/app",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
