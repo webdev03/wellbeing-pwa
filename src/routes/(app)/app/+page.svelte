@@ -1,1 +1,3 @@
-<h1 class="text-3xl leading-10">Hiiiii :D</h1>
+<main class="p-3">
+  <h1 class="text-2xl font-bold">Home</h1>
+</main>
