@@ -1,5 +1,38 @@
 <script lang="ts">
+  import { Button } from "$lib/components/ui/button";
+  import { NotebookPen } from "lucide-svelte";
+
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
 </script>
+
+<main class="p-3">
+  <h1 class="text-2xl font-bold">Journal</h1>
+  <p class="italic">Record your thoughts and emotions here.</p>
+  <a href="/app/journal/create">
+    <Button class="mt-2 w-full bg-sky-400 text-gray-950 hover:bg-sky-500">
+      <NotebookPen />
+      Write an entry
+    </Button>
+  </a>
+  <hr class="my-3" />
+  {#each data.entries as entry}
+    <a href={`/app/journal/${entry.id}`}>
+      <Button
+        class="mb-1 flex h-auto w-full flex-col bg-purple-400 text-gray-950 hover:bg-purple-500"
+      >
+        <span class="text-lg font-bold"
+          >{entry.createdAt.toLocaleDateString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric"
+          })}</span
+        >
+        <p class="max-w-full text-ellipsis">{entry.text.slice(0, 100)}</p>
+      </Button>
+    </a>
+  {:else}
+    <p>You ({data.auth.user.username}) haven't written any journal entries yet!</p>
+  {/each}
+</main>

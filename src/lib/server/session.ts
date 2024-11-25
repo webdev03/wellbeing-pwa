@@ -1,6 +1,7 @@
 // Based on the Lucia guide
 
 import type { RequestEvent } from "@sveltejs/kit";
+import { dev } from "$app/environment";
 import { eq } from "drizzle-orm";
 import { db } from "./db";
 import { users, sessions } from "./db/schema";
@@ -56,13 +57,16 @@ export async function invalidateSession(sessionId: string) {
   await db.delete(sessions).where(eq(sessions.id, sessionId));
 }
 
+export type AuthenticatedSessionValidationResult = { session: Session; user: User };
+
 export type SessionValidationResult =
-  | { session: Session; user: User }
+  | AuthenticatedSessionValidationResult
   | { session: null; user: null };
 
 export function setSessionTokenCookie(event: RequestEvent, token: string, expiresAt: Date): void {
   event.cookies.set("session", token, {
     httpOnly: true,
+    secure: !dev,
     sameSite: "lax",
     expires: expiresAt,
     path: "/"
