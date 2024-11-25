@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { enhance } from "$app/forms";
+    import Button from "$lib/components/ui/button/button.svelte";
   import { Label } from "$lib/components/ui/label";
   import { Slider } from "$lib/components/ui/slider";
   import type { PageData } from "./$types";
@@ -15,11 +17,11 @@
 <main class="p-2">
   <h1 class="text-2xl font-bold">Create a Journal Entry</h1>
 
-  <form class="mt-4 p-4">
-    <ol class="list-inside list-decimal">
+  <form class="mt-4 p-4" method="POST" use:enhance>
+    <ol class="list-outside list-decimal">
       <li>
         <label for="q1" class="pb-6">I feel cheerful in good spirits.</label>
-        <div class="ml-7 mt-3 max-w-80 space-y-3">
+        <div class="ml-3 mt-3 max-w-80 space-y-3">
           <Slider id="q1" min={0} max={5} step={1} class="w-full" bind:value={q1} />
           <div class="flex justify-between">
             {#each labels as label}
@@ -31,7 +33,7 @@
       </li>
       <li>
         <label for="q2" class="pb-6">I feel calm and relaxed.</label>
-        <div class="ml-7 mt-3 max-w-80 space-y-3">
+        <div class="ml-3 mt-3 max-w-80 space-y-3">
           <Slider id="q2" min={0} max={5} step={1} class="w-full" bind:value={q2} />
           <div class="flex justify-between">
             {#each labels as label}
@@ -43,7 +45,7 @@
       </li>
       <li>
         <label for="q3" class="pb-6">I feel active and healthy.</label>
-        <div class="ml-7 mt-3 max-w-80 space-y-3">
+        <div class="ml-3 mt-3 max-w-80 space-y-3">
           <Slider id="q3" min={0} max={5} step={1} class="w-full" bind:value={q3} />
           <div class="flex justify-between">
             {#each labels as label}
@@ -55,7 +57,7 @@
       </li>
       <li>
         <label for="q4" class="pb-6">I wake up feeling fresh and rested.</label>
-        <div class="ml-7 mt-3 max-w-80 space-y-3">
+        <div class="ml-3 mt-3 max-w-80 space-y-3">
           <Slider id="q4" min={0} max={5} step={1} class="w-full" bind:value={q4} />
           <div class="flex justify-between">
             {#each labels as label}
@@ -67,7 +69,7 @@
       </li>
       <li>
         <label for="q5" class="pb-6">I am able to do things that interest me.</label>
-        <div class="ml-7 mt-3 max-w-80 space-y-3">
+        <div class="ml-3 mt-3 max-w-80 space-y-3">
           <Slider id="q5" min={0} max={5} step={1} class="w-full" bind:value={q5} />
           <div class="flex justify-between">
             {#each labels as label}
@@ -78,5 +80,6 @@
         </div>
       </li>
     </ol>
+    <Button type="submit" class="bg-purple-400 text-gray-950 hover:bg-purple-500">Create</Button>
   </form>
 </main>
