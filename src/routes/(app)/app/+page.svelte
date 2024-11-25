@@ -1,3 +1,10 @@
+<script lang="ts">
+  import type { PageData } from "./$types";
+
+  let { data }: { data: PageData } = $props();
+</script>
+
 <main class="p-3">
-  <h1 class="text-2xl font-bold">Home</h1>
+  <h1 class="text-2xl font-medium">Hi, <span class="font-bold">{data.auth.user.username}</span></h1>
+  <p class="mt-3">This is a work in progress. Please click on one of the tabs below.</p>
 </main>
