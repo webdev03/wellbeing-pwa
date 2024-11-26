@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Chart from "./chart.svelte";
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
@@ -13,4 +14,30 @@
     >
     activities and then record a <a class="text-sky-500 underline" href="/app/journal">Journal</a> entry.
   </p>
+  <div class="my-3">
+    <Chart
+      type="line"
+      data={{
+        datasets: [
+          {
+            label: "Journal Emotion Scores",
+            data: data.entries,
+            borderColor: "red",
+            tension: 0.1
+          }
+        ]
+      }}
+      options={{
+        scales: {
+          x: {
+            type: "time"
+          },
+          y: {
+            min: 0,
+            max: 100
+          }
+        }
+      }}
+    />
+  </div>
 </main>

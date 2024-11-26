@@ -41,8 +41,8 @@
         <div class="mb-2 text-xl font-bold">Breathing</div>
         <p class="text-base text-gray-700">
           While quick breathing can be negative, conscious, and controlled breathing actually helps
-          you relax. We have included a simple animation that can be used for breathing. If you do
-          this for some time every day, you are likely to notice improvements in wellbeing.
+          you relax. We have included a utility that can be used for breathing. If you do this for
+          some time every day, you are likely to notice improvements in wellbeing.
         </p>
       </div>
       <a class="px-6 pb-4" href="/app/mindfulness/breathe">

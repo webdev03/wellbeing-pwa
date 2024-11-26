@@ -58,6 +58,10 @@
   >
 
   <hr class="my-2" />
-  
-  <p>Already have an account? <a href="/login" class="underline text-sky-500 hover:text-sky-600">Log In!</a></p>
+
+  <p>
+    Already have an account? <a href="/login" class="text-sky-500 underline hover:text-sky-600"
+      >Log In!</a
+    >
+  </p>
 </form>

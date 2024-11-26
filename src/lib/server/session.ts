@@ -57,6 +57,10 @@ export async function invalidateSession(sessionId: string) {
   await db.delete(sessions).where(eq(sessions.id, sessionId));
 }
 
+export async function invalidateSessionToken(token: string) {
+  await invalidateSession(createHash("sha256").update(token).digest("hex"));
+}
+
 export type AuthenticatedSessionValidationResult = { session: Session; user: User };
 
 export type SessionValidationResult =
