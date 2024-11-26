@@ -35,7 +35,7 @@
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
-  <Form.Button class="w-full bg-sky-400 hover:bg-sky-500"
+  <Form.Button class="w-full bg-sky-400 text-gray-950 hover:bg-sky-500"
     >{#if $delayed}<Loader2 class="animate-spin" />{/if}Log In</Form.Button
   >
 
@@ -48,4 +48,7 @@
       >Privacy Policy</Button
     >.
   </p>
+
+  <hr class="my-2" />
+  <p>Don't have</p>
 </form>

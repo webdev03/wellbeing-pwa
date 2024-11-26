@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
-  import { NotebookPen } from "lucide-svelte";
+  import { NotebookPen, Gauge } from "lucide-svelte";
 
   import type { PageData } from "./$types";
 
@@ -26,17 +26,24 @@
   {#each data.entries as entry}
     <a href={`/app/journal/${entry.id}`}>
       <Button
-        class="mb-1 flex h-auto w-full flex-col bg-purple-400 text-gray-950 hover:bg-purple-500"
+        class="mb-1 flex h-auto w-full flex-col bg-purple-400 text-left text-gray-950 hover:bg-purple-500"
       >
-        <span class="text-lg font-bold"
-          >{entry.createdAt.toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "short",
-            year: "numeric"
-          })}</span
+        <div class="justify- flex w-full flex-row items-center gap-2">
+          <span class="flex w-full gap-2 text-lg font-bold"
+            >{entry.createdAt.toLocaleDateString("en-GB", {
+              day: "numeric",
+              month: "short",
+              year: "numeric"
+            })}
+          </span>
+          <Gauge />
+          <span>{entry.emotionScore * 4}% Score</span>
+        </div>
+        <p
+          class={`w-full overflow-hidden text-ellipsis whitespace-nowrap ${entry.text ? "" : "italic"}`}
         >
-        <p class={`max-w-full text-ellipsis ${entry.text ? "" : "italic"}`}>
-          {entry.text.slice(0, 100) || "Empty; add some writing here!"}
+          {entry.text.slice(0, 100) + (entry.text.length > 100 ? "..." : "") ||
+            "Empty; add some writing here!"}
         </p>
       </Button>
     </a>

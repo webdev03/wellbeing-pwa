@@ -1,7 +1,7 @@
 import type { PageServerLoad } from "./$types";
 import { db } from "$lib/server/db";
 import { journalEntries } from "$lib/server/db/schema";
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { assertUserExists } from "$lib/server/assertion";
 
 export const load = (async ({ locals }) => {
@@ -10,7 +10,8 @@ export const load = (async ({ locals }) => {
   const entries = await db
     .select()
     .from(journalEntries)
-    .where(eq(journalEntries.userId, locals.auth.user.id));
+    .where(eq(journalEntries.userId, locals.auth.user.id))
+    .orderBy(desc(journalEntries.createdAt));
 
   return { entries };
 }) satisfies PageServerLoad;

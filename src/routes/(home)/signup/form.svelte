@@ -39,19 +39,21 @@
   <Form.Field {form} name="agreeTermsPrivacy">
     <Form.Control>
       {#snippet children({ props })}
-        <Checkbox {...props} bind:checked={$formData.agreeTermsPrivacy} />
-        <Form.Label
-          >I accept the <Button variant="link" href="/terms" class="p-0 text-base"
-            >Terms and Conditions</Button
-          > and
-          <Button variant="link" href="/privacy" class="p-0 text-base">Privacy Policy</Button
-          ></Form.Label
-        >
+        <div class="flex items-center space-x-3">
+          <Checkbox {...props} bind:checked={$formData.agreeTermsPrivacy} />
+          <Form.Label
+            >I accept the <Button variant="link" href="/terms" class="p-0  underline"
+              >Terms and Conditions</Button
+            > and the <Button variant="link" href="/privacy" class="p-0 underline"
+              >Privacy Policy</Button
+            >.</Form.Label
+          >
+        </div>
       {/snippet}
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
-  <Form.Button class="w-full bg-sky-400 hover:bg-sky-500"
+  <Form.Button class="w-full bg-sky-400 text-gray-950 hover:bg-sky-500"
     >{#if $delayed}<Loader2 class="animate-spin" />{/if}Sign Up</Form.Button
   >
 </form>

@@ -24,7 +24,8 @@
 <Toaster />
 
 <div class="flex h-screen flex-col">
-  {@render children()}
+  <!-- It is pb-16 because the bottom navbar is h-16 -->
+  <div class="pb-16">{@render children()}</div>
   <!-- based on https://flowbite.com/docs/components/bottom-navigation/ -->
   <div
     class="fixed bottom-0 left-0 z-50 h-16 w-full border-t border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-700"
