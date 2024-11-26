@@ -9,7 +9,13 @@
 
 <main class="p-3">
   <h1 class="text-2xl font-bold">Journal</h1>
-  <p class="italic">Record your thoughts and emotions here.</p>
+  <p class="italic">
+    You can record your thoughts and emotions here. You may want to use this as a <a
+      class="text-blue-600 underline"
+      target="_blank"
+      href="https://en.wikipedia.org/wiki/Gratitude_journal">gratitude journal</a
+    >.
+  </p>
   <a href="/app/journal/create">
     <Button class="mt-2 w-full bg-sky-400 text-gray-950 hover:bg-sky-500">
       <NotebookPen />
@@ -29,7 +35,9 @@
             year: "numeric"
           })}</span
         >
-        <p class="max-w-full text-ellipsis">{entry.text.slice(0, 100)}</p>
+        <p class={`max-w-full text-ellipsis ${entry.text ? "" : "italic"}`}>
+          {entry.text.slice(0, 100) || "Empty; add some writing here!"}
+        </p>
       </Button>
     </a>
   {:else}
