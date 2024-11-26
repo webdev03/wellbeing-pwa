@@ -50,5 +50,6 @@
   </p>
 
   <hr class="my-2" />
-  <p>Don't have</p>
+  
+  <p>Don't have an account yet? <a href="/signup" class="underline text-sky-500 hover:text-sky-600">Sign Up!</a></p>
 </form>

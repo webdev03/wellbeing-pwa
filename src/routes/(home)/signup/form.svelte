@@ -56,4 +56,8 @@
   <Form.Button class="w-full bg-sky-400 text-gray-950 hover:bg-sky-500"
     >{#if $delayed}<Loader2 class="animate-spin" />{/if}Sign Up</Form.Button
   >
+
+  <hr class="my-2" />
+  
+  <p>Already have an account? <a href="/login" class="underline text-sky-500 hover:text-sky-600">Log In!</a></p>
 </form>
