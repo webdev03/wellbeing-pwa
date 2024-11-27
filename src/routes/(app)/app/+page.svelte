@@ -14,30 +14,37 @@
     >
     activities and then record a <a class="text-sky-500 underline" href="/app/journal">Journal</a> entry.
   </p>
-  <div class="my-3">
-    <Chart
-      type="line"
-      data={{
-        datasets: [
-          {
-            label: "Journal Emotion Scores",
-            data: data.entries,
-            borderColor: "red",
-            tension: 0.1
+  {#if data.entries.length > 3}
+    <div class="my-3">
+      <Chart
+        type="line"
+        data={{
+          datasets: [
+            {
+              label: "Journal Emotion Scores",
+              data: data.entries,
+              borderColor: "#3b82f6",
+              tension: 0.1
+            }
+          ]
+        }}
+        options={{
+          scales: {
+            x: {
+              type: "time"
+            },
+            y: {
+              min: 0,
+              max: 100
+            }
           }
-        ]
-      }}
-      options={{
-        scales: {
-          x: {
-            type: "time"
-          },
-          y: {
-            min: 0,
-            max: 100
-          }
-        }
-      }}
-    />
-  </div>
+        }}
+      />
+    </div>
+  {:else}
+    <p>
+      For data related to your wellbeing to appear here, you will need to write some journal
+      entries.
+    </p>
+  {/if}
 </main>

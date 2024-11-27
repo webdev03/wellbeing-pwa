@@ -1,7 +1,5 @@
 <script lang="ts">
-  import type { Snippet } from "svelte";
-  import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
-  import { AlertDialog as AlertDialogBits } from "bits-ui";
+  import * as AlertDialog from "$lib/components/ui/alert-dialog";
   import { buttonVariants } from "$lib/components/ui/button";
 
   type Props = {
