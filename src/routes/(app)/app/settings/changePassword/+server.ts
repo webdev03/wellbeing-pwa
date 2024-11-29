@@ -10,9 +10,10 @@ export const POST: RequestHandler = async (event) => {
 
   const req = await event.request.json();
 
-  let newPassword = String(req?.newPassword);
+  let newPassword = String(req.password);
 
-  if (!newPassword || newPassword.length < 8) return new Response("Bad request", { status: 400 });
+  if (!req.password || typeof req.password !== "string" || !newPassword || newPassword.length < 8)
+    return new Response("Bad request", { status: 400 });
 
   await Promise.all([
     db
