@@ -1,15 +1,15 @@
-# Wellbeing PWA
+# Wellbeing
 
 ![logo and "Wellbeing", "Improve your mental health"](https://cloud-msq5swus7-hack-club-bot.vercel.app/0wellbeing-ss-mini.jpg)
 
-Improve your wellbeing and quality of life with this app (distributed as a PWA).
+Improve your wellbeing and quality of life with this site!
 
 ## Features
 1. Accounts system (username and password)
 2. Journal entries (recommended to be used as a [gratitude journal](https://en.wikipedia.org/wiki/Gratitude_journal))
-3. Quick wellbeing assessments based on the [WHO-5 questions](https://www.who.int/publications/m/item/WHO-UCN-MSD-MHE-2024.01) (original licensed under CC-BY-NC-SA 3.0).
-4. Graphs to show wellbeing changes over time.
-5. Small activities to help improve wellbeing.
+3. Quick wellbeing assessments based on the [WHO-5 questions](https://www.who.int/publications/m/item/WHO-UCN-MSD-MHE-2024.01) (original licensed under CC-BY-NC-SA 3.0)
+4. Graphs to show wellbeing changes over time
+5. Small activities to help improve wellbeing
 
 ## Self hosting
 
