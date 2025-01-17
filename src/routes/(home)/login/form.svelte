@@ -42,10 +42,8 @@
   <p class="mt-2 text-xs">
     By logging in, you agree to our <Button
       variant="link"
-      href="/terms"
+      href="/policy"
       class="p-0 text-xs underline">Terms and Conditions</Button
-    > and our <Button variant="link" href="/privacy" class="p-0 text-xs underline"
-      >Privacy Policy</Button
     >.
   </p>
 

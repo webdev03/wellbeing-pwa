@@ -42,10 +42,8 @@
         <div class="flex items-center space-x-3">
           <Checkbox {...props} bind:checked={$formData.agreeTermsPrivacy} />
           <Form.Label
-            >I accept the <Button variant="link" href="/terms" class="p-0  underline"
+            >I accept the <Button variant="link" href="/policy" class="p-0  underline"
               >Terms and Conditions</Button
-            > and the <Button variant="link" href="/privacy" class="p-0 underline"
-              >Privacy Policy</Button
             >.</Form.Label
           >
         </div>
